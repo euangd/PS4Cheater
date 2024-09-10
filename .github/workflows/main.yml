@@ -1,0 +1,7 @@
+- name: Add msbuild to PATH
+  uses: microsoft/setup-msbuild@v2
+
+- name: Build app for release
+  run: msbuild .\PS4 Cheat Engine.csproj -t:rebuild -verbosity:diag -property:Configuration=Release
+
+  
