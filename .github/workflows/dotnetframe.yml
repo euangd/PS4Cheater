@@ -1,4 +1,4 @@
-name: .NET Framework Build
+name: .NET Framework 
 
 on:
   push:
@@ -15,12 +15,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      
+
     - name: Restore dependencies
-      run: nuget restore "PS4Cheater/PS4 Cheat Engine.sln"
+      run: nuget restore "PS4 Cheat Engine.sln"
 
     - name: Build
-      run: msbuild "PS4Cheater/PS4 Cheat Engine.sln" /p:Configuration=Debug
+      run: msbuild "PS4 Cheat Engine.sln" /p:Configuration=Release
 
     - name: Run tests
       run: |
