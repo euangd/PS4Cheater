@@ -15,9 +15,16 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      
+    - name: msloc
+      run: $MSBuildLocation = Resolve-MSBuild 17.0   #<< This says to go find the latest 17.x version of MSBuild
 
+    - name: alias
+      run: Set-Alias MSBuild $MSBuildLocation
+      
     - name: Build
-      run: MSBuild \"PS4 Cheat Engine.sln\" /p:Configuration=Release"
+      run: MSBuild "PS4 Cheat Engine.sln" p:Configuration=Release"
+    
 
     - name: Run tests
       run: |
