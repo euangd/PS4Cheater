@@ -20,7 +20,7 @@ jobs:
       run: nuget restore "PS4 Cheat Engine.sln"
 
     - name: Build
-      run: msbuild "PS4 Cheat Engine.sln" /p:Configuration=Debug
+      run: dotnet build "PS4 Cheat Engine.sln" /p:Configuration=Debug
 
     - name: Run tests
       run: |
