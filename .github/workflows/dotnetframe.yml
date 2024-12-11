@@ -15,9 +15,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      
+    - name: Restore dependencies
+      run: nuget restore "PS4Cheater/PS4 Cheat Engine.sln"
 
     - name: Build
-      run: msbuild "PS4Cheater/PS4 Cheat Engine.sln" /p:Configuration=Release
+      run: msbuild "PS4Cheater/PS4 Cheat Engine.sln" /p:Configuration=Debug
 
     - name: Run tests
       run: |
