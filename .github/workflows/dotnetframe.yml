@@ -24,10 +24,10 @@ jobs:
       uses: NuGet/setup-nuget@v1
      
     - name: Restore NuGet Packages
-      run: nuget restore "PS4 Cheat Engine.snl"
+      run: nuget restore PS4 Cheat Engine.snl
       
     - name: Build App
-      run: msbuild "PS4 Cheat Engine.snl"
+      run: msbuild PS4 Cheat Engine.snl
         
     - name: VSTest
       run: vstest.console.exe TestConsoleTests\bin\Debug\TestConsoleTests.dll
